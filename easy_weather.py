@@ -12,7 +12,7 @@ with c2:
 with c3:
     st.image("https://th.bing.com/th/id/OIP.9hVOQwz5HOaQ9ctPBqUKmQHaEo?w=301&h=188&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",width=300)
 city = st.text_input("Enter city name")
-unit=st.radio("Choose unit ",["celsius","faherhnite"])
+unit=st.radio("Choose unit ",["celsius","fahrenheit"])
 api_key = "800382a46405dac27f3ee2dc779b057f"
 
 def get_latnlon(city_name):
@@ -38,7 +38,7 @@ if city:
             if unit=="celsius":
                 temp = weather_data["main"]["temp"] - 273.15
                 st.success(f"Current Temperature in {city.title()} is {int(temp)} °C")
-            elif unit=="faherhnite":
+            elif unit=="fahrenheit":
                 temp= (weather_data["main"]["temp"]-273.15)*(9/5) + 32
                 st.success(f"Current Temperature in {city.title()} is {int(temp)} °F") 
         else:
